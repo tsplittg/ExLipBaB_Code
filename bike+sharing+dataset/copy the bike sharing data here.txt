@@ -1,0 +1,2 @@
+The hour.csv file downloaded from https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset
+should be copied into this folder

@@ -1,0 +1,5 @@
+Weights for the test of correctness on networks for which the true constant is known.
+The weights and biases from the original LipBaB paper (Bhomwick et al 2021) should be copied here after being downloaded from their Github https://github.com/pyrobits/LipBaB
+
+
+
