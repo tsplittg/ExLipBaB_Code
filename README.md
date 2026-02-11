@@ -33,3 +33,7 @@ The code for the examples of the paper can be found in the applications Folder a
 Some data or code fragments, we cannot redistribute, so we link to the corresponding repositories.
 
 The code for the comparative results with LipSDP can be found in the LipSDP_applications Folder, but needs the corresponding repositories to function correctly, which are described in the corresponding matlab files.
+
+## Credits
+
+The package structure of `exlipbab` was created with [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) and the `py-pkgs-cookiecutter` [template](https://github.com/py-pkgs/py-pkgs-cookiecutter).

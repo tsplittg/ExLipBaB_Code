@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-# we load the number of subproblems with and withoput lower bounds from teh correpoding files
+# we load the number of subproblems with and withoput lower bounds from the correpoding files
 with_lower_bound_subproblems = np.load("wine_net_(11x12x12x1)_ReLU_with_lower_bound_ram_usage_exlipbab.npy")
 no_lower_bound_subproblems = np.load("wine_net_(11x12x12x1)_ReLU_no_lower_bound_ram_usage_exlipbab.npy")
 print(np.max(np.abs(with_lower_bound_subproblems- no_lower_bound_subproblems)))

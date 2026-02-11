@@ -1,5 +1,5 @@
 # We train a simple NN to learn the absolute value function.
-# We try different ReLU and GroupSort activation with Group size 2 (MaxMin) (Anil et al. 2019)
+# We try ReLU and GroupSort activation with Group size 2 (MaxMin) (Anil et al. 2019)
 import numpy as np
 import torch
 import torch.nn as nn

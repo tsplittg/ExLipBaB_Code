@@ -1,6 +1,6 @@
 # In this file, we test that the Lipschitz constants of all networks tested in Bhowmick et al. (2021) are correctly computed.
 # NOTE:  In order to run this file, the network weights and biases need to be downloaded from the repository of Bhowmick et al. (2021):
-# https://github.com/pyrobits/LipBaB
+# https://github.com/pyrobits/LipBaB and saved in the corrresponding folder "../lipbab_saved_networks"
 
 import numpy as np
 from exlipbab.exlipbab_main import exlipbab_main, exlipbab_main_symbolic
