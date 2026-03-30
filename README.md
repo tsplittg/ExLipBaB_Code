@@ -34,6 +34,10 @@ Some data or code fragments, we cannot redistribute, so we link to the correspon
 
 The code for the comparative results with LipSDP can be found in the LipSDP_applications Folder, but needs the corresponding repositories to function correctly, which are described in the corresponding matlab files.
 
-## Credits
+# Acknowledgements
+## Funding 
+This work has been funded by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) - 459360854 as part of the Research Unit "Lifespan AI: From Longitudinal Data to Lifespan Inference in Health" (DFG FOR 5347), University of Bremen (https://lifespanai.de/)
+
+## Other Credits
 
 The package structure of `exlipbab` was created with [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) and the `py-pkgs-cookiecutter` [template](https://github.com/py-pkgs/py-pkgs-cookiecutter).
