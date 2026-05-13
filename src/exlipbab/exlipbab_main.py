@@ -36,6 +36,9 @@ def exlipbab_main(N: list, X: Polyhedron, k: float =1., pnorm = 2, verbose = Tru
     """
     intial_polyhedron = X
 
+    timeout = kwargs.get('timeout', np.inf)
+    start_time = time.time()
+
     # we record the histories of bounds
     lower_bound_history = []
     upper_bound_history = []
@@ -90,7 +93,7 @@ def exlipbab_main(N: list, X: Polyhedron, k: float =1., pnorm = 2, verbose = Tru
     
     iterations_counter = 0 
     with tqdm(total = gub, initial=gub, desc="ExLipBaB Progress") as pbar:
-        while bool(gub > k * glb):
+        while bool(gub > k * glb) and time.time() - start_time < timeout:
             # get subproblem with largest upper bound
             current_sub_problem = subproblem_heap.pop() 
             # branch subproblem into two new subproblems

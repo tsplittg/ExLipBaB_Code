@@ -12,6 +12,9 @@ import time
 # remember to choose the right activation function and group size when constructing the network below
 group_size = 2
 
+# we set a timeout of 24 hours for the computation:
+timeout = 3600*24
+
 #model_string = f'bike_net_(13x20x16x8x3)_GroupSort_numGroups{10}'
 model_string = f'bike_net_(13x20x16x8x3)_ReLU'
 
@@ -35,9 +38,9 @@ X = (X - X.mean()) / X.std()
 
 # we use as input polyhedron the box formed by the first and third quantile of each feature in the dataset
 #input_bounds = [(X.iloc[:,i].quantile(0.25), X.iloc[:,i].quantile(0.75)) for i in range(X.shape[1])]
-input_bounds = np.array([(0, 0.1)]*13)
-input_polyhedron = Polyhedron.from_intervals(input_bounds)
-#input_polyhedron = FullPolyhedron(13)
+#input_bounds = np.array([(0, 0.1)]*13)
+#input_polyhedron = Polyhedron.from_intervals(input_bounds)
+input_polyhedron = FullPolyhedron(13)
 
 # we do not use a lower bound for the ExLipbab computation
 lower_bound = 0
@@ -54,7 +57,7 @@ for i in range(len(wts)):
         network.append(PWL_Identity(wts[i].shape[1]))
 
 start_time = time.time()
-glb, gub, bound_hist = exlipbab_main(N = network, X=input_polyhedron, lower_bound = 0., record_ram = True, solver = "glpk", verbose= True, record_symprop=True)
+glb, gub, bound_hist = exlipbab_main(N = network, X=input_polyhedron, lower_bound = 0., record_ram = True, solver = "glpk", verbose= True, record_symprop=True, timeout=timeout)
 print(f"LipBaB computation took {time.time()-start_time} seconds")
 print("final lower bound", glb)
 print("final upper bound", gub)
