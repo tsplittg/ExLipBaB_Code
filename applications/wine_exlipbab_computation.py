@@ -14,8 +14,8 @@ import time
 # remember to choose the right activation function and group size when constructing the network below
 group_size = 2
 
-#model_string = f'wine_net_(11x24x24x1)_GroupSort_numGroups{12}'
-model_string = f'wine_net_(11x24x24x1)_ReLU'
+model_string = f'wine_net_(11x24x24x1)_GroupSort_numGroups{12}'
+#model_string = f'wine_net_(11x24x24x1)_ReLU'
 
 # load the saved bike sharing network weights and biases
 wts = np.load(f'../exlipbab_saved_networks/wine/{model_string}_weights.npy', allow_pickle=True)
@@ -48,8 +48,8 @@ for i in range(len(wts)):
     network.append((wts[i].T, bs[i]))
     if i < len(wts)-1:
         #CHOOSE CORRECT ACTIVATION FUNCTION
-        #network.append(GroupSort(wts[i].shape[1], group_size=group_size))
-        network.append(PWL_Relu(wts[i].shape[1]))
+        network.append(GroupSort(wts[i].shape[1], group_size=group_size))
+        #network.append(PWL_Relu(wts[i].shape[1]))
     else:
         network.append(PWL_Identity(wts[i].shape[1]))
 
