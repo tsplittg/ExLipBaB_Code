@@ -14,9 +14,13 @@ ax.plot(np.arange(len(no_lower_bound_subproblems)), no_lower_bound_subproblems, 
 print("number iterations with lower bound", len(with_lower_bound_subproblems))
 print("number iterations no lower bound", len(no_lower_bound_subproblems))
 
-ax.legend(fontsize = 15)
-ax.set_xlabel("Iteration", fontsize = 15)
+ax.legend(fontsize = 20)
+ax.set_xlabel("Iteration", fontsize = 20)
 ax.set_ylabel("$|\\varrho|$", rotation=0, usetex=True, fontsize = 20)
+
+# we set the ticklabels to be larger
+ax.tick_params(axis='both', labelsize=15)
+
 #set style
 fig.tight_layout()
 fig.savefig("wine_num_subproblems_illustration.pdf")
