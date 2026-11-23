@@ -721,7 +721,7 @@ class GroupSort(PiecewiseLinearFunction):
                 
                 # set the activation state of the neurons in the current group according to the permutation matrix
                 permutation_matrix = (np.repeat(np.array(range(self.group_size)).reshape(-1,1), self.group_size, axis=1) ==
-                                      np.repeat(np.array(perm).reshape(1,-1), self.group_size, axis=0)).astype(int)
+                                      np.repeat(np.array(perm).reshape(1,-1), self.group_size, axis=0)).astype(int).T
                 # we pad the columns of the permutation matrix into the correct position in W
                 permutation_matrix = np.hstack((np.zeros((self.group_size, i*self.group_size)), permutation_matrix,
                                                 np.zeros((self.group_size, dimensionality - (i+1)*self.group_size))))
