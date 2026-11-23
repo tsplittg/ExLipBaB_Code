@@ -155,7 +155,7 @@ def symprop(domain: Polyhedron, weights_list: list, activations_list: list[Piece
         # we first construct the new tilde_w:
         new_tilde_W[:,:tilde_W.shape[1]] = activation_states_for_W_tilde @ tilde_W
         for number, star_neuron_index in enumerate(star_neurons_layer):
-            new_tilde_W[star_neuron_index, tilde_W.shape[1]+ number-1] = 1
+            new_tilde_W[star_neuron_index, tilde_W.shape[1] + number] = 1
 
         # now we construct the new tilde_b
         new_tilde_b = activation_states_for_W_tilde @ tilde_b + biases_for_b_tilde
