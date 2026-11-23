@@ -62,7 +62,7 @@ def exlipbab_main(N: list, X: Polyhedron, k: float =1., pnorm = 2, verbose = Tru
 
     initial_sub_problem.propagated_weights = linprop(old_tilde_W=initial_sub_problem.propagated_weights[0], old_tilde_b=initial_sub_problem.propagated_weights[1],
                                                      network_weigths=weights_list, network_Lambda=initial_activation_Lambda,
-                                                     network_lambda=initial_activation_lambda, start_layer = 0 , end_layer = min(initial_tilde_l, len(weights_list)-1))
+                                                     network_lambda=initial_activation_lambda, start_layer = 0 , end_layer = min(initial_tilde_l, len(weights_list)-1), in_branch=True)
     gub = lipschitz_bounds(sub_problem=initial_sub_problem, weights=weights_list, pnorm = pnorm)
     if "record_symprop" in kwargs and kwargs['record_symprop']:
         symprop_time = time.time() - symprop_start_time
